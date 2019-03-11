@@ -1,4 +1,7 @@
 
+*.bin
+*.img
+
 # Created by https://www.gitignore.io/api/c,c++,clion,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=c,c++,clion,visualstudiocode
 
