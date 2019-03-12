@@ -1,7 +1,7 @@
 BOOT_DIR = boot-loader
 BOOT_BIN = boot-loader.bin
 KERNEL_DIR = kernel-32
-KERNEL_BIN = temp-os.bin
+KERNEL_BIN = kernel-32.bin
 OUT = disk.img
 
 $(OUT): $(BOOT_DIR) $(KERNEL_DIR)

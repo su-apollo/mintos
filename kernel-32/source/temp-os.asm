@@ -17,7 +17,7 @@ START:
 
     %assign i 0
     %rep TOTALSECTORCOUNT
-        %assign i i + 1
+        %assign i   i + 1
 
         mov ax, 2
 
@@ -28,6 +28,7 @@ START:
         add word [ SECTORCOUNT ], 1
 
         %if i == TOTALSECTORCOUNT
+
             jmp $
         %else
             jmp ( 0x1000 + i * 0x20 ): 0x0000
