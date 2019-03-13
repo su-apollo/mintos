@@ -8,9 +8,14 @@
 *.o
 *.out
 
+*.elf
+*.dep
+
 *.bin
 *.img
 
-/.idea
-/.vscode
-/.vs
+temp/
+
+.idea/
+.vscode/
+.vs/
