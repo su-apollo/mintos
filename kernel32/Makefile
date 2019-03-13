@@ -21,7 +21,7 @@ ExecuteInternalBuild: dep
 	make -C $(OBJECT_DIR) -f ../Makefile kernel32.elf
 
 $(OBJECT_DIR)/kernel32.elf.bin: ExecuteInternalBuild
-	$(OBJCOPY32) $(OBJECT_DIR)/kernel32.elf $@
+	$(OBJCOPY) $(OBJECT_DIR)/kernel32.elf $@
 
 kernel32.bin: $(OBJECT_DIR)/entry-point.bin $(OBJECT_DIR)/kernel32.elf.bin
 	cat $^ > $@
