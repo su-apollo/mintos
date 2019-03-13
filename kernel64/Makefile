@@ -1,6 +1,6 @@
 ASM = nasm
-OUT = boot-loader.bin
-SOURCE = boot-loader.asm
+OUT = kernel64.bin
+SOURCE = source/entry-point.asm
 
 $(OUT):
 	$(ASM) -o $(OUT) $(SOURCE)

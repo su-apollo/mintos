@@ -1,22 +1,32 @@
+UTIL_DIR = utility
+IMAGE_MAKER = utility/image-maker.out
 BOOT_DIR = boot-loader
-BOOT_BIN = boot-loader.bin
-KERNEL_DIR = kernel-32
-KERNEL_BIN = kernel-32.bin
+BOOT_BIN = boot-loader/boot-loader.bin
+KERNEL32_DIR = kernel32
+KERNEL32_BIN = kernel32/kernel32.bin
+KERNEL64_DIR = kernel64
+KERNEL64_BIN = kernel64/kernel64.bin
 OUT = disk.img
 
-$(OUT): $(BOOT_DIR) $(KERNEL_DIR)
-	cat $(BOOT_DIR)/$(BOOT_BIN) $(KERNEL_DIR)/$(KERNEL_BIN) > $(OUT)
+$(OUT): $(BOOT_BIN) $(KERNEL32_BIN) $(KERNEL64_BIN)
+	make -C $(UTIL_DIR)
+	./$(IMAGE_MAKER) $^
 
-$(KERNEL_DIR): dummy
-	make -C $(KERNEL_DIR)
+$(KERNEL64_BIN): dummy
+	make -C $(KERNEL64_DIR)
 
-$(BOOT_DIR): dummy
+$(KERNEL32_BIN): dummy
+	make -C $(KERNEL32_DIR)
+
+$(BOOT_BIN): dummy
 	make -C $(BOOT_DIR)
 
 dummy:
 	@echo "build start.."
 
 clean:
-	make -C $(KERNEL_DIR) clean
+	make -C $(UTIL_DIR) clean
+	make -C $(KERNEL64_DIR) clean
+	make -C $(KERNEL32_DIR) clean
 	make -C $(BOOT_DIR) clean
 	rm -f $(OUT)
