@@ -34,7 +34,7 @@ clean:
 CENTRYPOINTOBJECTFILE = main.o
 CSOURCEFILES = $(wildcard ../$(SOURCE_DIR)/*.c)
 ASSEMBLYSOURCEFILES = $(wildcard ../$(SOURCE_DIR)/*.asm)
-COBJECTFILES = $(subst Main.o, , $(notdir $(patsubst %.c,%.o,$(CSOURCEFILES))))
+COBJECTFILES = $(subst main.o, , $(notdir $(patsubst %.c,%.o,$(CSOURCEFILES))))
 ASSEMBLYOBJECTFILES = $(notdir $(patsubst %.asm,%.o,$(ASSEMBLYSOURCEFILES)))
 
 %.o: ../$(SOURCE_DIR)/%.c

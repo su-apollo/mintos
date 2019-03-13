@@ -8,7 +8,7 @@ KERNEL64_DIR = kernel64
 KERNEL64_BIN = kernel64/kernel64.bin
 OUT = disk.img
 
-$(OUT): $(BOOT_BIN) $(KERNEL32_BIN) $(KERNEL64_BIN)
+$(OUT): $(BOOT_BIN) $(KERNEL32_BIN)
 	make -C $(UTIL_DIR)
 	./$(IMAGE_MAKER) $^
 

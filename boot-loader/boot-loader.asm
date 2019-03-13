@@ -6,7 +6,7 @@ SECTION .text
 jmp 0x07C0:START
 
 ; total os image size without boot loader
-TOTALSECTORCOUNT: dw 1024
+TOTALSECTORCOUNT: dw 0x02
 
 START:
     ; initialize

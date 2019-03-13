@@ -5,6 +5,8 @@ void kPrintString(int iX, int iY, const char* pcString);
 void main(void)
 {
     kPrintString(0, 3, "Kernel Start");
+
+    while(1);
 }
 
 void kPrintString(int iX, int iY, const char* pcString)
