@@ -22,11 +22,11 @@ int main(int argc, char* argv[])
         
     if( argc < 3 )
     {
-        fprintf( stderr, "[ERROR] ImageMaker.exe BootLoader.bin Kernel32.bin\n" );
+        fprintf( stderr, "[ERROR] image-maker boot-loader.bin kernel32.bin\n" );
         exit( -1 );
     }
     
-    if( ( iTargetFd = open( "disk.img", O_RDWR | O_CREAT |  O_TRUNC, S_IREAD | S_IWRITE ) ) == -1 )
+    if( ( iTargetFd = open( "out/disk.img", O_RDWR | O_CREAT |  O_TRUNC, S_IREAD | S_IWRITE ) ) == -1 )
     {
         fprintf( stderr , "[ERROR] disk.img open fail.\n" );
         exit( -1 );

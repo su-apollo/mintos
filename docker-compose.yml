@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  beaver-build:
+    container_name: beaver-build
+    image: beaver-build
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    volumes: 
+      - ./out:/out
