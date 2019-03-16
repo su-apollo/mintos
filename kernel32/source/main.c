@@ -1,4 +1,5 @@
 #include "types.h"
+#include "page.h"
 
 void kPrintString(int iX, int iY, const char* pcString);
 BOOL kIsMemoryEnough();
@@ -28,6 +29,10 @@ void main()
         while(1) ;
     }
     kPrintString(30, 5, "Pass");
+
+    kPrintString( 0, 6, "Long page tables initialize. [    ]" );
+    kInitializePageTables();
+    kPrintString( 30, 6, "Pass" );
 
     while(1);
 }

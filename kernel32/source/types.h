@@ -10,7 +10,7 @@
 #define FALSE   0
 #define NULL    0
 
-#pragma pack( push, 1 )
+#pragma pack(push, 1)
 
 typedef struct kCharactorStruct
 {
@@ -18,4 +18,4 @@ typedef struct kCharactorStruct
     BYTE bAttribute;
 } CHARACTER;
 
-#pragma pack( pop )
+#pragma pack(pop)
